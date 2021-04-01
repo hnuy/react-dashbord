@@ -1,11 +1,11 @@
-import { BrowserRouter as Switch, Route, Router } from "react-router-dom";
+import { BrowserRouter as Switch, Route } from "react-router-dom";
 import Login from "./component/login";
 import SignUp from "./component/signup";
 import editProfile from "./component/editProfile";
-import mainApp from "./page/mainApp";
+import mainApp from "./page/MainApp";
 import alertPage from "./page/AlertPage"
 import card from "./page/CardPage"
-import task from "./page/FormPage"
+import task from "./page/TaskPage"
 
 function App() {
   return (

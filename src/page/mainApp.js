@@ -63,7 +63,7 @@ class DashboardPage extends React.Component {
               <a
                 class="nav-link active bg-warning"
                 aria-current="page"
-                href="card"
+                href="task"
               >
                 Task
               </a>
@@ -71,7 +71,7 @@ class DashboardPage extends React.Component {
           </li>
           <li class="nav-item">
             <Alert color="danger">
-              <a class="nav-link active bg-danger" aria-current="page" href="task">
+              <a class="nav-link active bg-danger" aria-current="page" href="alert">
                 Alert
               </a>
             </Alert>

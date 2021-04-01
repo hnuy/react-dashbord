@@ -90,7 +90,7 @@ export default class Login extends Component {
                 />
                 <label className="custom-control-label" htmlFor="customCheck1">
                   Remember me<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                  Forgot <a href="#">password?</a>
+                  Forgot <a href="wait somting">password?</a>
                 </label>
 
                 <br></br>
