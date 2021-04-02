@@ -1,7 +1,7 @@
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import Login from "./component/login";
 import SignUp from "./component/signup";
-import editProfile from "./component/editProfile";
+import Profile from "./page/Profile";
 import mainApp from "./page/MainApp";
 import alertPage from "./page/AlertPage"
 import card from "./page/CardPage"
@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/" component={Login} />
         <Route path="/sign-in" component={Login} />
         <Route path="/sign-up" component={SignUp} />
-        <Route path="/profile" component={editProfile} />
+        <Route path="/profile" component={Profile} />
         <Route path="/main-app" component={mainApp} />
         <Route path="/alert" component={alertPage} />
         <Route path="/card" component={card} />

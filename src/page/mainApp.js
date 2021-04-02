@@ -25,6 +25,7 @@ import {
   Row,
 } from "reactstrap";
 import { getColor } from "../utils/colors";
+import Navbar from "../component/Navbar"
 class DashboardPage extends React.Component {
   componentDidMount() {
     // this is needed, because InfiniteCalendar forces window scroll
@@ -35,59 +36,7 @@ class DashboardPage extends React.Component {
     const primaryColor = getColor("primary");
     return (
       <Page className="DashboardPage" title="Dashboard">
-        <ul class="nav nav-pills nav-fill">
-          <li class="nav-item">
-            <Alert color="primary">
-              <a
-                class="nav-link active bg-secondary"
-                aria-current="page"
-                href="main-app"
-              >
-                Home
-              </a>
-            </Alert>
-          </li>
-          <li class="nav-item">
-            <Alert color="secondary">
-              <a
-                class="nav-link active bg-success"
-                aria-current="page"
-                href="card"
-              >
-                Card
-              </a>
-            </Alert>
-          </li>
-          <li class="nav-item">
-            <Alert color="warning">
-              <a
-                class="nav-link active bg-warning"
-                aria-current="page"
-                href="task"
-              >
-                Task
-              </a>
-            </Alert>
-          </li>
-          <li class="nav-item">
-            <Alert color="danger">
-              <a class="nav-link active bg-danger" aria-current="page" href="alert">
-                Alert
-              </a>
-            </Alert>
-          </li>
-          <li class="nav-item">
-            <Alert color="primary">
-              <a
-                class="nav-link active bg-primary"
-                aria-current="page"
-                href="profile"
-              >
-                Profile
-              </a>
-            </Alert>
-          </li>
-        </ul>
+       <Navbar/>
         <Row>
           <Col lg={3} md={6} sm={6} xs={12}>
             <NumberWidget

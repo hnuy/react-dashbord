@@ -3,10 +3,11 @@ import jwt_decode from "jwt-decode";
 import "../component/profile.css";
 import axios from "axios";
 import { Alert } from "reactstrap";
-import Page from "./Page";
+import Page from "../component/Page";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "../component/Navbar"
 
-export default class editProfile extends Component {
+export default class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -96,63 +97,7 @@ export default class editProfile extends Component {
   render() {
     return (
       <Page className="ProfilePage" title="Profile">
-        <ul class="nav nav-pills nav-fill">
-          <li class="nav-item">
-            <Alert color="primary">
-              <a
-                class="nav-link active bg-secondary"
-                aria-current="page"
-                href="main-app"
-              >
-                Home
-              </a>
-            </Alert>
-          </li>
-          <li class="nav-item">
-            <Alert color="secondary">
-              <a
-                class="nav-link active bg-success"
-                aria-current="page"
-                href="card"
-              >
-                Card
-              </a>
-            </Alert>
-          </li>
-          <li class="nav-item">
-            <Alert color="warning">
-              <a
-                class="nav-link active bg-warning"
-                aria-current="page"
-                href="task"
-              >
-                Task
-              </a>
-            </Alert>
-          </li>
-          <li class="nav-item">
-            <Alert color="danger">
-              <a
-                class="nav-link active bg-danger"
-                aria-current="page"
-                href="alert"
-              >
-                Alert
-              </a>
-            </Alert>
-          </li>
-          <li class="nav-item">
-            <Alert color="primary">
-              <a
-                class="nav-link active bg-primary"
-                aria-current="page"
-                href="profile"
-              >
-                Profile
-              </a>
-            </Alert>
-          </li>
-        </ul>
+       <NavBar></NavBar>
         <div class="row gutters">
           <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
             <div class="card h-100">

@@ -9,73 +9,28 @@ import {
   FormGroup,
   Input,
   Label,
-  Alert,
 } from "reactstrap";
+import Navbar from "../component/Navbar";
 
 const FormPage = () => {
   let [inputCheck, setInputCheck] = useState([""]);
   let [Title, settitle] = useState("");
   let [Description, setDescription] = useState("");
+  let [File, setFile] = useState([""]);
+
+  const submitValue = () => {
+    const frmdetails = {
+      title: Title,
+      description: Description,
+      file: File,
+      check_list: inputCheck,
+    };
+    console.log(frmdetails);
+  };
 
   return (
     <Page title="Add Task">
-      <ul class="nav nav-pills nav-fill">
-        <li class="nav-item">
-          <Alert color="primary">
-            <a
-              class="nav-link active bg-secondary"
-              aria-current="page"
-              href="main-app"
-            >
-              Home
-            </a>
-          </Alert>
-        </li>
-        <li class="nav-item">
-          <Alert color="secondary">
-            <a
-              class="nav-link active bg-success"
-              aria-current="page"
-              href="card"
-            >
-              Card
-            </a>
-          </Alert>
-        </li>
-        <li class="nav-item">
-          <Alert color="warning">
-            <a
-              class="nav-link active bg-warning"
-              aria-current="page"
-              href="task"
-            >
-              Task
-            </a>
-          </Alert>
-        </li>
-        <li class="nav-item">
-          <Alert color="danger">
-            <a
-              class="nav-link active bg-danger"
-              aria-current="page"
-              href="alert"
-            >
-              Alert
-            </a>
-          </Alert>
-        </li>
-        <li class="nav-item">
-          <Alert color="primary">
-            <a
-              class="nav-link active bg-primary"
-              aria-current="page"
-              href="profile"
-            >
-              Profile
-            </a>
-          </Alert>
-        </li>
-      </ul>
+      <Navbar />
       <Card>
         <CardHeader>Task</CardHeader>
         <CardBody>
@@ -84,16 +39,23 @@ const FormPage = () => {
               Title
             </Label>
             <Col sm={10}>
-              <Input type="text" name="email" />
+              <Input
+                type="text"
+                name="title"
+                onChange={(e) => settitle(e.target.value)}
+              />
             </Col>
           </FormGroup>
-          <FormGroup row></FormGroup>
           <FormGroup row>
             <Label for="exampleSelectMulti" sm={2}>
               Description
             </Label>
             <Col sm={10}>
-              <Input type="text" name="selectMulti" multiple />
+              <Input
+                type="text"
+                name="decription"
+                onChange={(e) => setDescription(e.target.value)}
+              />
             </Col>
           </FormGroup>
           <FormGroup row>
@@ -101,7 +63,7 @@ const FormPage = () => {
               File
             </Label>
             <Col sm={10}>
-              <Input type="file" name="file" multiple />
+              <Input type="file" name="file" multiple onChange={e=>setFile(e.target.files)} />
             </Col>
           </FormGroup>
           <FormGroup row>
@@ -118,7 +80,11 @@ const FormPage = () => {
                         setInputCheck(
                           inputCheck.map((value, j) => {
                             if (i === j)
-                              value = { id: i, checkitle: e.target.value };
+                              value = {
+                                id: i,
+                                checkitle: e.target.value,
+                                status: false,
+                              };
                             return value;
                           })
                         )
@@ -140,9 +106,17 @@ const FormPage = () => {
               </button>
             </Col>
           </FormGroup>
+          <FormGroup row>
+            <Label for="date" sm={2}>
+              Date
+            </Label>
+            <Col sm={{ size: 10 }}>
+              <input type="date" id="birthday" name="birthday" />
+            </Col>
+          </FormGroup>
           <FormGroup check row>
             <Col sm={{ size: 10, offset: 6 }}>
-              <Button>Submit</Button>
+              <Button onClick={submitValue}>Submit</Button>
             </Col>
           </FormGroup>
         </CardBody>
