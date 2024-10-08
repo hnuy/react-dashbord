@@ -5,7 +5,7 @@ import axios from "axios";
 import { Alert } from "reactstrap";
 import Page from "../component/Page";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "../component/Navbar"
+import NavBar from "../component/Navbar";
 
 export default class Profile extends Component {
   constructor(props) {
@@ -21,27 +21,27 @@ export default class Profile extends Component {
       b64: "",
       mimeType: "",
     };
-    let decoded;
-    const token = localStorage.getItem("token");
-    if (token) {
-      decoded = jwt_decode(token);
-      if (decoded && decoded.imgProfile) {
-        const buffer = decoded.data.data; // e.g., <Buffer 89 50 4e ... >
-        const b64 = new Buffer(buffer).toString("base64");
-        const Type = decoded.mimetype;
-        this.state = {
-          firstName: decoded.firstName,
-          lastName: decoded.lastName,
-          email: decoded.email,
-          password: "",
-          imgProfile: "",
-          picture: "",
-          buffer,
-          b64,
-          mimeType: Type,
-        };
-      }
-    }
+    // let decoded;
+    // const token = localStorage.getItem("token");
+    // if (token) {
+    //   decoded = jwt_decode(token);
+    //   if (decoded && decoded.imgProfile) {
+    //     const buffer = decoded.data.data; // e.g., <Buffer 89 50 4e ... >
+    //     const b64 = new Buffer(buffer).toString("base64");
+    //     const Type = decoded.mimetype;
+    //     this.state = {
+    //       firstName: decoded.firstName,
+    //       lastName: decoded.lastName,
+    //       email: decoded.email,
+    //       password: "",
+    //       imgProfile: "",
+    //       picture: "",
+    //       buffer,
+    //       b64,
+    //       mimeType: Type,
+    //     };
+    //   }
+    // }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleRemoveToken = this.handleRemoveToken.bind(this);
@@ -97,7 +97,7 @@ export default class Profile extends Component {
   render() {
     return (
       <Page className="ProfilePage" title="Profile">
-       <NavBar></NavBar>
+        <NavBar></NavBar>
         <div class="row gutters">
           <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
             <div class="card h-100">

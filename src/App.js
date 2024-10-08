@@ -2,7 +2,7 @@ import { BrowserRouter as Switch, Route } from "react-router-dom";
 import Login from "./component/login";
 import SignUp from "./component/signup";
 import Profile from "./page/Profile";
-import mainApp from "./page/MainApp";
+import mainApp from "./page/mainApp";
 import alertPage from "./page/AlertPage"
 import card from "./page/CardPage"
 import task from "./page/TaskPage"

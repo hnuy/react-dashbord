@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "../index.css";
 
 export default class Login extends Component {
@@ -40,16 +40,16 @@ export default class Login extends Component {
     const body = {};
     body.email = this.state.email;
     body.password = this.state.password;
-    await axios
-      .post("http://localhost:8080/api/auth/signin", body)
-      .then((res) => {
-        localStorage.setItem("token", res.data.accessToken);
-        this.routeChange();
-      })
-      .catch((error) => {
-        alert(error.response.data.message);
-        throw error;
-      });
+    // await axios
+    //   .post("http://localhost:8080/api/auth/signin", body)
+    //   .then((res) => {
+    //     localStorage.setItem("token", res.data.accessToken);
+    //     this.routeChange();
+    //   })
+    //   .catch((error) => {
+    //     alert(error.response.data.message);
+    //     throw error;
+    //   });
   };
 
   render() {
@@ -107,7 +107,11 @@ export default class Login extends Component {
             </button>
             <p style={{ textAlign: "center" }}>OR</p>
           </form>
-          <button type="submit" className="btn btn-primary btn-block" onClick={this.routeChangeToSingUp}>
+          <button
+            type="submit"
+            className="btn btn-primary btn-block"
+            onClick={this.routeChangeToSingUp}
+          >
             Sing out
           </button>
         </div>
